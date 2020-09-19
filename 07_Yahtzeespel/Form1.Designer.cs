@@ -34,6 +34,7 @@
             this.Die3 = new System.Windows.Forms.PictureBox();
             this.Die4 = new System.Windows.Forms.PictureBox();
             this.Die5 = new System.Windows.Forms.PictureBox();
+            this.Lbl_Rolls = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Die1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Die2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Die3)).BeginInit();
@@ -98,11 +99,22 @@
             this.Die5.TabStop = false;
             this.Die5.Click += new System.EventHandler(this.Btn_Die_Click);
             // 
+            // Lbl_Rolls
+            // 
+            this.Lbl_Rolls.AutoSize = true;
+            this.Lbl_Rolls.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Lbl_Rolls.Location = new System.Drawing.Point(79, 300);
+            this.Lbl_Rolls.Name = "Lbl_Rolls";
+            this.Lbl_Rolls.Size = new System.Drawing.Size(19, 21);
+            this.Lbl_Rolls.TabIndex = 2;
+            this.Lbl_Rolls.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 337);
+            this.ClientSize = new System.Drawing.Size(364, 337);
+            this.Controls.Add(this.Lbl_Rolls);
             this.Controls.Add(this.Die5);
             this.Controls.Add(this.Die4);
             this.Controls.Add(this.Die3);
@@ -117,6 +129,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Die4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Die5)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -128,6 +141,7 @@
         private System.Windows.Forms.PictureBox Die3;
         private System.Windows.Forms.PictureBox Die4;
         private System.Windows.Forms.PictureBox Die5;
+        private System.Windows.Forms.Label Lbl_Rolls;
     }
 }
 
