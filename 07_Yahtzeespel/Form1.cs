@@ -71,7 +71,8 @@ namespace _07_Yahtzeespel
                         cnt[i] += 1;
             }
 
-            foreach (int i in cnt) { Console.Write(i); }                    // print
+            foreach (int i in cnt) 
+                Console.Write(i);                                           // print
             Console.WriteLine("");
 
             foreach (int i in Dice_Values)                                  // print 2
