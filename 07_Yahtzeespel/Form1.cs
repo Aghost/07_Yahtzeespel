@@ -50,14 +50,12 @@ namespace _07_Yahtzeespel
             Random rnd = new Random();
 
             for (int i = 0; i < 5; i++)
-            {
                 if (dice[i])
                 {
                     int value = rnd.Next(0, 6);
                     all_dice[i].Image = ImgArray[value];
                     Dice_Values[i] = value + 1;
                 }
-            }
 
         }
 
@@ -66,36 +64,46 @@ namespace _07_Yahtzeespel
             Array.Sort(Dice_Values);
             int[] cnt = { 0, 0, 0, 0, 0, 0 };
 
-            for (int i = 0; i < Dice_Values.Length; i++)
+            for (int i = 0; i <= Dice_Values.Length; i++)                   // int[] for dice values 
             {
                 for (int j = 0; j < Dice_Values.Length; j++)
                     if (Dice_Values[j] == i + 1)
-                    {
                         cnt[i] += 1;
-                    }
             }
 
             foreach (int i in cnt) { Console.Write(i); }                    // print
             Console.WriteLine("");
 
-            foreach (int i in Dice_Values)
+            foreach (int i in Dice_Values)                                  // print 2
                 Console.Write($"| {i} | ");
             Console.WriteLine("");
 
             if (Dice_Values.All(element => element == Dice_Values[0]))      // Check Yahtzee
                 Console.Write($"|YAHTZEE|\n");
 
-            string tempstring = "";                                         // check big street
-            foreach (char chr in cnt) { tempstring += (char)(chr + 48); }
+            string tempstring = "";                                         // temporary string, to compare
+            foreach (char chr in cnt)
+                tempstring += (char)(chr + 48);
 
-            if (tempstring == "111110" || tempstring == "011111")           
-                Console.Write("street");
+            if (tempstring.ToCharArray().Any(e => e == '5'))                // Check Yahtzee v2
+                Console.WriteLine("yahtzee weej");
 
-            //else if (tempstring[0] != 0 && tempstring[1] != 0 && tempstring[2] != 0 )
+            if (tempstring.ToCharArray().Any(e => e == '4'))                // check 4 of a kind
+                Console.WriteLine("4 of a kind");
 
-            int j = 0;
-            if (tempstring[j] != 0 && tempstring[j + 1] != 0 && tempstring[j + 2] != 0)
-                        Console.Write("test");
+            if (tempstring.ToCharArray().Any(e => e == '3') &&              // check full house
+                    tempstring.ToCharArray().Any(e => e == '2'))
+                Console.WriteLine("full house");
+
+            if (tempstring == "111110" || tempstring == "011111")           // check big street
+                Console.Write("big street");
+            else
+            {
+                for (int j = 0; j <= 3; j++)                                // check small street
+                    if (tempstring[j] != '0' && tempstring[j + 1] != '0' && tempstring[j + 2] != '0')
+                        Console.Write("small street");
+            }
+
         }
 
         private void Btn_RollDie_Click(object sender, EventArgs e)
@@ -119,6 +127,7 @@ namespace _07_Yahtzeespel
             
             int selected = tempbox.Name.ToCharArray().Last() - 49;
             Select_Die(selected);
+            tempbox.Cursor = Cursors.Default;
 
             Console.WriteLine($"{Dice_Values[selected]} - {Selected_Dice[selected]}");
         }

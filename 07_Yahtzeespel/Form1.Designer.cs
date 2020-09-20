@@ -54,6 +54,7 @@
             // 
             // Die1
             // 
+            this.Die1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Die1.ErrorImage = null;
             this.Die1.InitialImage = null;
             this.Die1.Location = new System.Drawing.Point(9, 230);
@@ -65,6 +66,7 @@
             // 
             // Die2
             // 
+            this.Die2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Die2.Location = new System.Drawing.Point(79, 230);
             this.Die2.Name = "Die2";
             this.Die2.Size = new System.Drawing.Size(64, 64);
@@ -74,6 +76,7 @@
             // 
             // Die3
             // 
+            this.Die3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Die3.Location = new System.Drawing.Point(149, 230);
             this.Die3.Name = "Die3";
             this.Die3.Size = new System.Drawing.Size(64, 64);
@@ -83,6 +86,7 @@
             // 
             // Die4
             // 
+            this.Die4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Die4.Location = new System.Drawing.Point(219, 230);
             this.Die4.Name = "Die4";
             this.Die4.Size = new System.Drawing.Size(64, 64);
@@ -92,6 +96,7 @@
             // 
             // Die5
             // 
+            this.Die5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Die5.Location = new System.Drawing.Point(289, 230);
             this.Die5.Name = "Die5";
             this.Die5.Size = new System.Drawing.Size(64, 64);
